@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Cyberpunk colors
+				cyber: {
+					'dark': '#0D0E19',
+					'dark-blue': '#11131F',
+					'blue': '#00A9FF',
+					'magenta': '#FF00E5',
+					'yellow': '#FFE500',
+					'green': '#00FF9D',
+					'purple': '#9D00FF',
 				}
 			},
 			borderRadius: {
@@ -84,11 +95,65 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 10px rgba(0, 169, 255, 0.7), 0 0 20px rgba(0, 169, 255, 0.5)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 20px rgba(0, 169, 255, 0.9), 0 0 30px rgba(0, 169, 255, 0.7)' 
+					}
+				},
+				'pulse-neon': {
+					'0%, 100%': { 
+						opacity: 1,
+						filter: 'brightness(1)' 
+					},
+					'50%': { 
+						opacity: 0.8,
+						filter: 'brightness(1.2)' 
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'gradient-x': {
+					'0%, 100%': {
+						'background-position': '0% 50%'
+					},
+					'50%': {
+						'background-position': '100% 50%'
+					}
+				},
+				'scan-line': {
+					'0%': {
+						transform: 'translateY(-100%)'
+					},
+					'100%': {
+						transform: 'translateY(100vh)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow': 'glow 2s ease-in-out infinite',
+				'pulse-neon': 'pulse-neon 2s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'gradient-x': 'gradient-x 3s ease infinite',
+				'scan-line': 'scan-line 8s linear infinite'
+			},
+			backgroundImage: {
+				'cyber-grid': "linear-gradient(rgba(13, 14, 25, 0.9) 1px, transparent 1px), linear-gradient(90deg, rgba(13, 14, 25, 0.9) 1px, transparent 1px)"
+			},
+			boxShadow: {
+				'neon-blue': '0 0 5px rgba(0, 169, 255, 0.5), 0 0 10px rgba(0, 169, 255, 0.3)',
+				'neon-magenta': '0 0 5px rgba(255, 0, 229, 0.5), 0 0 10px rgba(255, 0, 229, 0.3)',
 			}
 		}
 	},
