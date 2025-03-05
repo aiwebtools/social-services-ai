@@ -18,15 +18,16 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-cyber-dark/95 backdrop-blur-md shadow-lg' : 'py-6'}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-cyber-dark/95 backdrop-blur-md shadow-lg' : 'py-4 md:py-6'}`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Logo />
+        <Logo className="scale-90 md:scale-100" />
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-white hover:text-cyber-blue focus:outline-none"
+          className="md:hidden text-white hover:text-cyber-blue focus:outline-none active:scale-95 transition-transform"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
         >
           {mobileMenuOpen ? (
             <X className="h-6 w-6" />
@@ -71,28 +72,28 @@ const Header = () => {
       
       {/* Mobile navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden glassmorphism mt-3 m-4 rounded-lg">
+        <div className="md:hidden glassmorphism mt-2 mx-4 rounded-lg shadow-lg animate-fade-in">
           <nav className="flex flex-col p-4 space-y-4">
-            <div className="text-sm text-gray-400 italic">
+            <div className="text-sm text-gray-400 italic pb-2 border-b border-white/10">
               "Alone, we can do so little; together, we can do so much." — Helen Keller
             </div>
             <a 
               href="#get-assistance" 
-              className="text-white hover:text-cyber-blue transition-colors py-2"
+              className="text-white hover:text-cyber-blue transition-colors py-3 px-3 rounded-md hover:bg-white/5 active:bg-white/10"
               onClick={() => setMobileMenuOpen(false)}
             >
               GET ASSISTANCE
             </a>
             <a 
               href="#faq" 
-              className="text-white hover:text-cyber-blue transition-colors py-2"
+              className="text-white hover:text-cyber-blue transition-colors py-3 px-3 rounded-md hover:bg-white/5 active:bg-white/10"
               onClick={() => setMobileMenuOpen(false)}
             >
               FAQ
             </a>
             <a 
               href="#disclaimer" 
-              className="text-white hover:text-cyber-blue transition-colors py-2"
+              className="text-white hover:text-cyber-blue transition-colors py-3 px-3 rounded-md hover:bg-white/5 active:bg-white/10"
               onClick={() => setMobileMenuOpen(false)}
             >
               Disclaimer
@@ -101,7 +102,7 @@ const Header = () => {
               href="https://www.aiwebtools.ai" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-white hover:text-cyber-blue transition-colors py-2"
+              className="text-white hover:text-cyber-blue transition-colors py-3 px-3 rounded-md hover:bg-white/5 active:bg-white/10"
               onClick={() => setMobileMenuOpen(false)}
             >
               More AI Tools

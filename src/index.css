@@ -47,11 +47,23 @@
   body {
     @apply bg-cyber-dark text-foreground antialiased overflow-x-hidden;
     font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Rajdhani', sans-serif;
     @apply font-bold tracking-tight;
+  }
+  
+  /* Improve mobile scrolling */
+  html, body {
+    @apply overscroll-none;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better focus states for mobile */
+  a, button {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-cyber-blue/50;
   }
 }
 
@@ -65,13 +77,13 @@
   }
   
   .cyber-button {
-    @apply relative px-6 py-3 overflow-hidden rounded-lg bg-cyber-dark-blue transition-all duration-300
+    @apply relative px-4 sm:px-6 py-2 sm:py-3 overflow-hidden rounded-lg bg-cyber-dark-blue transition-all duration-300
     before:absolute before:inset-0 before:border before:border-cyber-blue before:rounded-lg before:scale-x-[1.02] before:scale-y-[1.05]
-    hover:shadow-neon-blue hover:text-cyber-blue;
+    hover:shadow-neon-blue hover:text-cyber-blue active:opacity-90;
   }
   
   .cyber-grid-bg {
-    @apply bg-cyber-grid bg-[length:40px_40px] bg-fixed;
+    @apply bg-cyber-grid bg-[length:30px_30px] md:bg-[length:40px_40px] bg-fixed;
   }
   
   .scan-line {
@@ -85,4 +97,42 @@
   .text-glow-magenta {
     text-shadow: 0 0 10px rgba(255, 0, 229, 0.7), 0 0 20px rgba(255, 0, 229, 0.5);
   }
+  
+  /* Mobile-friendly touch targets */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Mobile optimized animations */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse-neon, 
+    .animate-scan-line, 
+    .animate-glow {
+      animation: none !important;
+    }
+  }
+}
+
+/* Mobile-specific scrollbar styling */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+  
+  .mobile-nav-height {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
 }
