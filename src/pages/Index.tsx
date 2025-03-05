@@ -54,7 +54,9 @@ const Index = () => {
                 Social Safety Net GPT is here to help you navigate through difficult times with personalized assistance and real-time resource connections.
               </p>
               <a 
-                href="#" 
+                href="https://chatgpt.com/g/g-u0BBJXRNY-social-safety-net-gpt" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-6 md:px-8 py-3 md:py-4 rounded-lg bg-gradient-to-r from-cyber-blue to-cyber-purple text-white font-bold hover:shadow-neon-blue transition-all transform hover:-translate-y-1 active:translate-y-0 text-base md:text-lg"
               >
                 Get Started Now

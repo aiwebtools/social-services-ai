@@ -60,7 +60,9 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <a 
-                href="#get-assistance" 
+                href="https://chatgpt.com/g/g-u0BBJXRNY-social-safety-net-gpt" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyber-blue to-cyber-purple text-white font-bold hover:shadow-neon-blue transition-all transform hover:-translate-y-1 active:translate-y-0 active:opacity-90"
               >
                 Get Assistance Now
