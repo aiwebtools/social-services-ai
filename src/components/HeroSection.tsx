@@ -1,8 +1,8 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import YouTube from 'react-youtube';
 
 const HeroSection = () => {
-  const videoRef = useRef<HTMLIFrameElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -14,26 +14,36 @@ const HeroSection = () => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     
-    // Function to set video quality
-    const setVideoQuality = () => {
-      if (videoRef.current && videoRef.current.contentWindow) {
-        // Set lower quality on mobile for better performance
-        const quality = isMobile ? 'hd720' : 'hd1080';
-        videoRef.current.contentWindow.postMessage(
-          `{"event":"command","func":"setPlaybackQuality","args":["${quality}"]}`,
-          '*'
-        );
-      }
-    };
-
-    // Set a timeout to ensure the video has loaded
-    const timeoutId = setTimeout(setVideoQuality, 2000);
-    
     return () => {
-      clearTimeout(timeoutId);
       window.removeEventListener('resize', checkMobile);
     };
-  }, [isMobile]);
+  }, []);
+
+  // YouTube video options
+  const opts = {
+    height: '100%',
+    width: '100%',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+      mute: 0,
+      controls: 1,
+      rel: 0,
+      modestbranding: 1,
+      playsinline: 1,
+      origin: window.location.origin,
+      enablejsapi: 1,
+      fs: 1, // Enable fullscreen button
+      quality: isMobile ? 'hd720' : 'hd1080',
+    },
+  };
+
+  const onReady = (event) => {
+    // Save player reference
+    const player = event.target;
+    // Set playback quality
+    player.setPlaybackQuality(isMobile ? 'hd720' : 'hd1080');
+  };
 
   return (
     <section className="relative min-h-screen pt-24 pb-12 md:pb-20 overflow-hidden cyber-grid-bg">
@@ -78,14 +88,13 @@ const HeroSection = () => {
           
           <div className="relative mt-4 md:mt-0">
             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden neon-border">
-              <iframe
-                ref={videoRef}
+              <YouTube
+                videoId="pXXqMe97GDg"
+                opts={opts}
+                onReady={onReady}
                 className="w-full h-full rounded-lg"
-                src="https://www.youtube.com/embed/pXXqMe97GDg?autoplay=1&mute=0&controls=1&rel=0&enablejsapi=1&playsinline=1"
-                title="Social Safety Net GPT Introduction"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+                id="social-safety-net-video"
+              />
             </div>
             
             <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-lg bg-gradient-to-r from-cyber-magenta to-cyber-purple opacity-30 blur-lg"></div>
