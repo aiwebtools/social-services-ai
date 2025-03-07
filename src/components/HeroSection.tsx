@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import YouTube from 'react-youtube';
 
@@ -61,7 +60,7 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
-              Your Personal <span className="text-cyber-blue text-glow">Social Safety Net</span> Assistant
+              Your Personal <span className="text-cyber-blue text-glow">AI Social Services</span> Assistant
             </h1>
             
             <p className="text-base md:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
