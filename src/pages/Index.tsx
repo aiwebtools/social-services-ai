@@ -6,6 +6,7 @@ import FeaturesSection from '../components/FeaturesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import FAQSection from '../components/FAQSection';
 import DisclaimerSection from '../components/DisclaimerSection';
+import DisclaimerPopup from '../components/DisclaimerPopup';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -38,6 +39,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-cyber-dark text-foreground overflow-x-hidden">
       <Header />
+      <DisclaimerPopup />
       <main>
         <HeroSection />
         <FeaturesSection />
