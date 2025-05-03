@@ -44,10 +44,12 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="#faq" 
+                  href="https://chatgpt.com/g/g-SIGSpaGWG-ai-affordable-housing-finder"
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-cyber-blue transition-colors"
                 >
-                  FAQ
+                  FIND AFFORDABLE HOUSING
                 </a>
               </li>
               <li>

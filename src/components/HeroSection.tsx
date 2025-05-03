@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import YouTube from 'react-youtube';
 
@@ -77,10 +78,12 @@ const HeroSection = () => {
                 Get Assistance Now
               </a>
               <a 
-                href="#how-it-works" 
+                href="https://chatgpt.com/g/g-SIGSpaGWG-ai-affordable-housing-finder" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 rounded-lg border border-cyber-blue/50 text-white hover:bg-cyber-blue/10 transition-all active:bg-cyber-blue/20"
               >
-                Learn How It Works
+                Find Affordable Housing
               </a>
             </div>
           </div>

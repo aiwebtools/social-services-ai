@@ -48,10 +48,12 @@ const Header = () => {
             GET ASSISTANCE
           </a>
           <a 
-            href="#faq" 
+            href="https://chatgpt.com/g/g-SIGSpaGWG-ai-affordable-housing-finder" 
+            target="_blank" 
+            rel="noopener noreferrer" 
             className="text-white hover:text-cyber-blue transition-colors"
           >
-            FAQ
+            FIND AFFORDABLE HOUSING
           </a>
           <a 
             href="#disclaimer" 
@@ -85,11 +87,13 @@ const Header = () => {
               GET ASSISTANCE
             </a>
             <a 
-              href="#faq" 
+              href="https://chatgpt.com/g/g-SIGSpaGWG-ai-affordable-housing-finder"
+              target="_blank" 
+              rel="noopener noreferrer" 
               className="text-white hover:text-cyber-blue transition-colors py-3 px-3 rounded-md hover:bg-white/5 active:bg-white/10"
               onClick={() => setMobileMenuOpen(false)}
             >
-              FAQ
+              FIND AFFORDABLE HOUSING
             </a>
             <a 
               href="#disclaimer" 
