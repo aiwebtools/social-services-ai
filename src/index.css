@@ -70,7 +70,9 @@
 
 @layer components {
   .glassmorphism {
-    @apply bg-gradient-to-br from-white/10 via-purple-500/5 to-pink-500/10 backdrop-blur-xl border border-gradient-to-r from-gold-400/20 via-purple-400/20 to-pink-400/20 shadow-divine;
+    @apply bg-gradient-to-br from-white/10 via-purple-500/5 to-pink-500/10 backdrop-blur-xl border border-gold-400/20 shadow-divine;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(168,85,247,0.05), rgba(236,72,153,0.1));
+    border-image: linear-gradient(to right, rgba(251,191,36,0.2), rgba(168,85,247,0.2), rgba(236,72,153,0.2)) 1;
   }
   
   .neon-border {
@@ -78,9 +80,21 @@
   }
   
   .cyber-button {
-    @apply relative px-6 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-xl bg-gradient-to-r from-indigo-600/50 via-purple-600/50 to-pink-600/50 backdrop-blur-md transition-all duration-500
-    before:absolute before:inset-0 before:border-2 before:border-gradient-to-r before:from-gold-400/50 before:via-purple-400/50 before:to-pink-400/50 before:rounded-xl before:scale-x-[1.02] before:scale-y-[1.05]
-    hover:shadow-divine hover:text-gold-200 active:opacity-90 transform hover:-translate-y-1 hover:scale-105;
+    @apply relative px-6 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-xl bg-gradient-to-r from-indigo-600/50 via-purple-600/50 to-pink-600/50 backdrop-blur-md transition-all duration-500 hover:shadow-divine hover:text-gold-200 active:opacity-90 transform hover:-translate-y-1 hover:scale-105;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  .cyber-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(to right, rgba(251,191,36,0.5), rgba(168,85,247,0.5), rgba(236,72,153,0.5));
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: -1;
   }
   
   .cyber-grid-bg {
