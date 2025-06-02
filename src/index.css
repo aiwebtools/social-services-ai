@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -44,9 +45,10 @@
   }
 
   body {
-    @apply bg-cyber-dark text-foreground antialiased overflow-x-hidden;
+    @apply bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 text-foreground antialiased overflow-x-hidden;
     font-family: 'Inter', sans-serif;
     -webkit-tap-highlight-color: transparent;
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -62,78 +64,129 @@
   
   /* Better focus states for mobile */
   a, button {
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-cyber-blue/50;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400/50;
   }
 }
 
 @layer components {
   .glassmorphism {
-    @apply bg-opacity-10 backdrop-blur-lg bg-white/5 border border-white/10;
+    @apply bg-gradient-to-br from-white/10 via-purple-500/5 to-pink-500/10 backdrop-blur-xl border border-gradient-to-r from-gold-400/20 via-purple-400/20 to-pink-400/20 shadow-divine;
   }
   
   .neon-border {
-    @apply relative before:absolute before:inset-0 before:p-[1px] before:rounded-lg before:bg-gradient-to-r before:from-cyber-blue before:via-cyber-magenta before:to-cyber-yellow before:opacity-70 before:-z-10;
+    @apply relative before:absolute before:inset-0 before:p-[2px] before:rounded-lg before:bg-gradient-to-r before:from-gold-400 before:via-purple-500 before:to-pink-500 before:opacity-80 before:-z-10 before:animate-gradient-shift;
   }
   
   .cyber-button {
-    @apply relative px-4 sm:px-6 py-2 sm:py-3 overflow-hidden rounded-lg bg-cyber-dark-blue transition-all duration-300
-    before:absolute before:inset-0 before:border before:border-cyber-blue before:rounded-lg before:scale-x-[1.02] before:scale-y-[1.05]
-    hover:shadow-neon-blue hover:text-cyber-blue active:opacity-90;
+    @apply relative px-6 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-xl bg-gradient-to-r from-indigo-600/50 via-purple-600/50 to-pink-600/50 backdrop-blur-md transition-all duration-500
+    before:absolute before:inset-0 before:border-2 before:border-gradient-to-r before:from-gold-400/50 before:via-purple-400/50 before:to-pink-400/50 before:rounded-xl before:scale-x-[1.02] before:scale-y-[1.05]
+    hover:shadow-divine hover:text-gold-200 active:opacity-90 transform hover:-translate-y-1 hover:scale-105;
   }
   
   .cyber-grid-bg {
-    @apply bg-cyber-grid bg-[length:30px_30px] md:bg-[length:40px_40px] bg-fixed;
+    @apply bg-gradient-to-br from-indigo-950/90 via-purple-950/90 to-pink-950/90 relative;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+      linear-gradient(rgba(255, 215, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 215, 0, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
   }
   
   .scan-line {
-    @apply fixed top-0 left-0 right-0 h-[2px] bg-cyber-blue opacity-30 z-50 animate-scan-line;
+    @apply fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-gold-400 to-transparent opacity-60 z-50 animate-scan-line;
   }
 
   .text-glow {
-    text-shadow: 0 0 10px rgba(0, 169, 255, 0.7), 0 0 20px rgba(0, 169, 255, 0.5);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.4);
+  }
+  
+  .text-glow-gold {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 215, 0, 0.7), 0 0 45px rgba(255, 215, 0, 0.5);
   }
   
   .text-glow-magenta {
-    text-shadow: 0 0 10px rgba(255, 0, 229, 0.7), 0 0 20px rgba(255, 0, 229, 0.5);
+    text-shadow: 0 0 15px rgba(255, 0, 229, 0.8), 0 0 30px rgba(255, 0, 229, 0.6), 0 0 45px rgba(255, 0, 229, 0.4);
   }
   
   /* Mobile-friendly touch targets */
   .touch-target {
-    @apply min-h-[44px] min-w-[44px];
+    @apply min-h-[48px] min-w-[48px];
   }
   
   /* Mobile optimized animations */
   @media (prefers-reduced-motion: reduce) {
     .animate-pulse-neon, 
     .animate-scan-line, 
-    .animate-glow {
+    .animate-glow,
+    .animate-gradient-shift,
+    .animate-pulse-divine {
       animation: none !important;
     }
   }
   
-  /* Add gradient animation */
-  @keyframes gradient-x {
+  /* Enhanced gradient animations */
+  @keyframes gradient-shift {
     0%, 100% {
       background-position: 0% 50%;
+      transform: rotate(0deg);
+    }
+    25% {
+      background-position: 100% 50%;
     }
     50% {
-      background-position: 100% 50%;
+      background-position: 100% 100%;
+      transform: rotate(1deg);
+    }
+    75% {
+      background-position: 0% 100%;
     }
   }
   
-  .animate-gradient-x {
-    animation: gradient-x 3s ease infinite;
-    background-size: 200% 200%;
+  @keyframes pulse-divine {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes pulse-divine-delay {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(1.02);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.08);
+    }
+  }
+  
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease-in-out infinite;
+    background-size: 300% 300%;
+  }
+  
+  .animate-pulse-divine {
+    animation: pulse-divine 4s ease-in-out infinite;
+  }
+  
+  .animate-pulse-divine-delay {
+    animation: pulse-divine-delay 6s ease-in-out infinite 2s;
   }
   
   /* Add fade in animation for popup */
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   
   .animate-fade-in {
-    animation: fadeIn 0.3s ease-out;
+    animation: fadeIn 0.6s ease-out;
   }
 }
 

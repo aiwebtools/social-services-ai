@@ -46,34 +46,38 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-24 pb-12 md:pb-20 overflow-hidden cyber-grid-bg">
+    <section className="relative min-h-screen pt-32 pb-20 md:pb-32 overflow-hidden cyber-grid-bg">
       <div className="scan-line"></div>
       
+      {/* Enhanced divine background effects */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/20 via-transparent to-cyber-blue/20 opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gold-500/10 via-purple-600/10 to-pink-600/10 opacity-60 animate-gradient-shift"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,215,0,0.15),transparent_70%)] animate-pulse-divine"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.15),transparent_70%)] animate-pulse-divine-delay"></div>
+        <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(255,215,0,0.1),transparent,rgba(236,72,153,0.1),transparent,rgba(147,51,234,0.1))] animate-gradient-shift"></div>
       </div>
       
-      <div className="container relative z-10 mx-auto px-4 md:px-6 pt-8 md:pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="space-y-4 md:space-y-6 text-center lg:text-left">
-            <div className="inline-block px-3 py-1 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue text-sm font-medium animate-pulse-neon">
+      <div className="container relative z-10 mx-auto px-6 md:px-8 pt-12 md:pt-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
+          <div className="space-y-8 md:space-y-12 text-center lg:text-left">
+            <div className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-gold-400/20 via-purple-500/20 to-pink-500/20 border border-gradient-to-r from-gold-400/40 via-purple-400/40 to-pink-400/40 text-gold-300 text-base font-semibold animate-pulse-neon backdrop-blur-md">
               AI-Powered Assistance
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
-              Your Personal <span className="text-cyber-blue text-glow">AI Social Services</span> Assistant
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white">
+              Your Personal <span className="text-gold-400 text-glow">AI Social Services</span> Assistant
             </h1>
             
-            <p className="text-base md:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Comprehensive support for immediate needs with real-time information, personalized assistance, and actionable resources to help you navigate challenging situations.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <a 
                 href="https://chatgpt.com/g/g-u0BBJXRNY-social-safety-net-gpt" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyber-blue to-cyber-purple text-white font-bold hover:shadow-neon-blue transition-all transform hover:-translate-y-1 active:translate-y-0 active:opacity-90"
+                className="px-8 py-4 rounded-xl bg-gradient-to-r from-gold-400 via-purple-500 to-pink-500 text-white font-bold hover:shadow-divine transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 active:translate-y-0 active:opacity-90"
               >
                 Get Assistance Now
               </a>
@@ -81,30 +85,31 @@ const HeroSection = () => {
                 href="https://chatgpt.com/g/g-SIGSpaGWG-ai-affordable-housing-finder" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-lg border border-cyber-blue/50 text-white hover:bg-cyber-blue/10 transition-all active:bg-cyber-blue/20"
+                className="px-8 py-4 rounded-xl border-2 border-gradient-to-r from-gold-400/60 via-purple-400/60 to-pink-400/60 text-white hover:bg-gradient-to-r hover:from-gold-400/10 hover:via-purple-500/10 hover:to-pink-500/10 transition-all duration-500 backdrop-blur-md hover:shadow-divine transform hover:-translate-y-1"
               >
                 Find Affordable Housing
               </a>
             </div>
           </div>
           
-          <div className="relative mt-4 md:mt-0">
-            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden neon-border">
+          <div className="relative mt-8 md:mt-0">
+            <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden neon-border backdrop-blur-sm">
               <YouTube
                 videoId="pXXqMe97GDg"
                 opts={opts}
                 onReady={onReady}
-                className="w-full h-full rounded-lg"
+                className="w-full h-full rounded-2xl"
                 id="social-safety-net-video"
               />
             </div>
             
-            <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-lg bg-gradient-to-r from-cyber-magenta to-cyber-purple opacity-30 blur-lg"></div>
+            <div className="absolute -bottom-8 -right-8 -z-10 h-full w-full rounded-2xl bg-gradient-to-r from-gold-400/30 via-purple-500/30 to-pink-500/30 opacity-60 blur-2xl animate-pulse-divine"></div>
+            <div className="absolute -top-4 -left-4 -z-10 h-3/4 w-3/4 rounded-2xl bg-gradient-to-r from-purple-500/20 to-gold-400/20 opacity-40 blur-xl animate-pulse-divine-delay"></div>
           </div>
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-cyber-dark to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-indigo-950 via-purple-950/80 to-transparent"></div>
     </section>
   );
 };

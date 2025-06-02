@@ -63,7 +63,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Cyberpunk colors
+				// Divine color palette
+				gold: {
+					50: '#fffbeb',
+					100: '#fef3c7',
+					200: '#fde68a',
+					300: '#fcd34d',
+					400: '#fbbf24',
+					500: '#f59e0b',
+					600: '#d97706',
+					700: '#b45309',
+					800: '#92400e',
+					900: '#78350f',
+				},
+				// Enhanced cyberpunk colors
 				cyber: {
 					'dark': '#0D0E19',
 					'dark-blue': '#11131F',
@@ -98,10 +111,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 10px rgba(0, 169, 255, 0.7), 0 0 20px rgba(0, 169, 255, 0.5)' 
+						boxShadow: '0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.6)' 
 					},
 					'50%': { 
-						boxShadow: '0 0 20px rgba(0, 169, 255, 0.9), 0 0 30px rgba(0, 169, 255, 0.7)' 
+						boxShadow: '0 0 30px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 215, 0, 0.8)' 
 					}
 				},
 				'pulse-neon': {
@@ -111,7 +124,7 @@ export default {
 					},
 					'50%': { 
 						opacity: 0.8,
-						filter: 'brightness(1.2)' 
+						filter: 'brightness(1.3)' 
 					}
 				},
 				'float': {
@@ -119,7 +132,7 @@ export default {
 						transform: 'translateY(0)'
 					},
 					'50%': {
-						transform: 'translateY(-10px)'
+						transform: 'translateY(-15px)'
 					}
 				},
 				'gradient-x': {
@@ -137,23 +150,63 @@ export default {
 					'100%': {
 						transform: 'translateY(100vh)'
 					}
+				},
+				'gradient-shift': {
+					'0%, 100%': {
+						'background-position': '0% 50%',
+						transform: 'rotate(0deg)'
+					},
+					'25%': {
+						'background-position': '100% 50%'
+					},
+					'50%': {
+						'background-position': '100% 100%',
+						transform: 'rotate(2deg)'
+					},
+					'75%': {
+						'background-position': '0% 100%'
+					}
+				},
+				'pulse-divine': {
+					'0%, 100%': {
+						opacity: '0.3',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.7',
+						transform: 'scale(1.05)'
+					}
+				},
+				'pulse-divine-delay': {
+					'0%, 100%': {
+						opacity: '0.2',
+						transform: 'scale(1.02)'
+					},
+					'50%': {
+						opacity: '0.6',
+						transform: 'scale(1.08)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'glow': 'glow 2s ease-in-out infinite',
+				'glow': 'glow 3s ease-in-out infinite',
 				'pulse-neon': 'pulse-neon 2s ease-in-out infinite',
 				'float': 'float 6s ease-in-out infinite',
 				'gradient-x': 'gradient-x 3s ease infinite',
-				'scan-line': 'scan-line 8s linear infinite'
+				'scan-line': 'scan-line 10s linear infinite',
+				'gradient-shift': 'gradient-shift 8s ease-in-out infinite',
+				'pulse-divine': 'pulse-divine 4s ease-in-out infinite',
+				'pulse-divine-delay': 'pulse-divine-delay 6s ease-in-out infinite 2s'
 			},
 			backgroundImage: {
 				'cyber-grid': "linear-gradient(rgba(13, 14, 25, 0.9) 1px, transparent 1px), linear-gradient(90deg, rgba(13, 14, 25, 0.9) 1px, transparent 1px)"
 			},
 			boxShadow: {
-				'neon-blue': '0 0 5px rgba(0, 169, 255, 0.5), 0 0 10px rgba(0, 169, 255, 0.3)',
-				'neon-magenta': '0 0 5px rgba(255, 0, 229, 0.5), 0 0 10px rgba(255, 0, 229, 0.3)',
+				'neon-blue': '0 0 10px rgba(0, 169, 255, 0.6), 0 0 20px rgba(0, 169, 255, 0.4)',
+				'neon-magenta': '0 0 10px rgba(255, 0, 229, 0.6), 0 0 20px rgba(255, 0, 229, 0.4)',
+				'divine': '0 0 30px rgba(255, 215, 0, 0.5), 0 0 60px rgba(147, 51, 234, 0.3), 0 0 90px rgba(236, 72, 153, 0.2)',
 			}
 		}
 	},
