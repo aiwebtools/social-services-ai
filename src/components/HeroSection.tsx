@@ -4,6 +4,7 @@ import YouTube from 'react-youtube';
 
 const HeroSection = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [currentVideoId, setCurrentVideoId] = useState('KMvrXcK46xw'); // Start with Social Safety Net GPT video
 
   useEffect(() => {
     // Check if user is on mobile
@@ -43,6 +44,13 @@ const HeroSection = () => {
     const player = event.target;
     // Set playback quality
     player.setPlaybackQuality(isMobile ? 'hd720' : 'hd1080');
+  };
+
+  const onEnd = () => {
+    // When first video ends, play the second video
+    if (currentVideoId === 'KMvrXcK46xw') {
+      setCurrentVideoId('pXXqMe97GDg');
+    }
   };
 
   return (
@@ -95,9 +103,10 @@ const HeroSection = () => {
           <div className="relative mt-8 md:mt-0">
             <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden neon-border backdrop-blur-sm">
               <YouTube
-                videoId="pXXqMe97GDg"
+                videoId={currentVideoId}
                 opts={opts}
                 onReady={onReady}
+                onEnd={onEnd}
                 className="w-full h-full rounded-2xl"
                 id="social-safety-net-video"
               />
