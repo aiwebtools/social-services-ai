@@ -97,6 +97,14 @@ const HeroSection = () => {
               >
                 Find Affordable Housing
               </a>
+              <a 
+                href="https://aidoctorgpt.lovable.app/?via=aiwebtools" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-xl bg-background/10 text-white border-2 border-white/20 hover:bg-white/10 transition-all duration-500 backdrop-blur-md hover:shadow-divine transform hover:-translate-y-1"
+              >
+                Free Healthcare Ai Tools
+              </a>
             </div>
           </div>
           
