@@ -59,6 +59,16 @@ const Footer = () => {
               </li>
               <li>
                 <a 
+                  href="https://aidoctorgpt.lovable.app/?via=aiwebtools"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-200 hover:text-gold-300 transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  Free Healthcare Ai Tools
+                </a>
+              </li>
+              <li>
+                <a 
                   href="#disclaimer" 
                   className="text-gray-200 hover:text-gold-300 transition-all duration-300 hover:translate-x-1 inline-block"
                 >
