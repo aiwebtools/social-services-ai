@@ -16,7 +16,7 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
             Social Safety Net <span className="text-cyber-blue">GPT</span>
           </span>
           <span className="text-[10px] md:text-xs text-cyber-blue/80">
-            Presented by <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-cyber-magenta transition-colors">AiWebTools.AI</a>
+            Presented by <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="hover:text-cyber-magenta transition-colors">AiWebTools.AI</a>
           </span>
         </div>
       </div>
